@@ -12,8 +12,8 @@
 function scroll_top_admin_menu() {
 
     $settings = add_options_page(
-        esc_html__('ID Back To Top Settings', 'scroll-top'),
-        esc_html__('Back To Top', 'scroll-top'),
+        esc_html__('Scroll To Top Settings', 'scroll-top'),
+        esc_html__('Scroll To Top', 'scroll-top'),
         'manage_options',
         'scroll_top_settings_page',
         'scroll_top_plugin_settings_render_page'
@@ -41,7 +41,7 @@ function scroll_top_styles_scripts() {
 }
 
 /**
- * Registers the ID Back To Top settings.
+ * Registers the Scroll To Top settings.
  *
  * @link   http://codex.wordpress.org/Function_Reference/register_setting
  */
@@ -268,7 +268,7 @@ function scroll_top_position_field() {
 function scroll_top_color_field() {
     $settings = scroll_top_get_plugin_settings('scroll_top_color');
 ?>
-    <input class="color-scroll" type="text" name="scroll_top_plugin_settings[scroll_top_color]" value="<?php echo sanitize_hex_color($settings); ?>" />
+    <input class="color-scroll" type="text" name="scroll_top_plugin_settings[scroll_top_color]" value="<?php echo sanitize_hex_color($settings); ?>" data-default-color="#ffffff" />
 <?php
 }
 
@@ -278,7 +278,7 @@ function scroll_top_color_field() {
 function scroll_top_bg_color_field() {
     $settings = scroll_top_get_plugin_settings('scroll_top_bg_color');
 ?>
-    <input class="color-scroll" type="text" name="scroll_top_plugin_settings[scroll_top_bg_color]" value="<?php echo sanitize_hex_color($settings); ?>" />
+    <input class="color-scroll" type="text" name="scroll_top_plugin_settings[scroll_top_bg_color]" value="<?php echo sanitize_hex_color($settings); ?>" data-default-color="#000000" />
 <?php
 }
 
@@ -293,19 +293,67 @@ function scroll_top_radius_field() {
         <p class="checkbox-img">
             <label>
                 <input type="radio" name="scroll_top_plugin_settings[scroll_top_radius]" value="rounded" <?php checked('rounded', $settings); ?> />
-                <img src="<?php echo trailingslashit(ST_ASSETS) . 'img/rounded.png'; ?>" alt="<?php esc_attr_e('Rounded', 'scroll-top'); ?>">
+                <span class="scroll-top-demo scroll-top-demo-rounded"><svg width="36px" height="36px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <style>
+                                .top-icon {
+                                    fill: none;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: bevel;
+                                    stroke-width: 1.5px;
+                                    stroke: #fff;
+                                }
+                            </style>
+                        </defs>
+                        <g id="ic-chevron-top">
+                            <path class="top-icon" d="M16.78,14.2l-4.11-4.11a1,1,0,0,0-1.41,0l-4,4" />
+                        </g>
+                    </svg>
+                </span>
                 <span class="screen-reader-text"><?php esc_html_e('Rounded', 'scroll-top'); ?></span>
             </label>
 
             <label>
                 <input type="radio" name="scroll_top_plugin_settings[scroll_top_radius]" value="square" <?php checked('square', $settings); ?> />
-                <img src="<?php echo trailingslashit(ST_ASSETS) . 'img/square.png'; ?>" alt="<?php esc_attr_e('Square', 'scroll-top'); ?>">
+                <span class="scroll-top-demo scroll-top-demo-square"><svg width="36px" height="36px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <style>
+                                .top-icon {
+                                    fill: none;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: bevel;
+                                    stroke-width: 1.5px;
+                                    stroke: #fff;
+                                }
+                            </style>
+                        </defs>
+                        <g id="ic-chevron-top">
+                            <path class="top-icon" d="M16.78,14.2l-4.11-4.11a1,1,0,0,0-1.41,0l-4,4" />
+                        </g>
+                    </svg>
+                </span>
                 <span class="screen-reader-text"><?php esc_html_e('Square', 'scroll-top'); ?></span>
             </label>
 
             <label>
                 <input type="radio" name="scroll_top_plugin_settings[scroll_top_radius]" value="circle" <?php checked('circle', $settings); ?> />
-                <img src="<?php echo trailingslashit(ST_ASSETS) . 'img/circle.png'; ?>" alt="<?php esc_attr_e('Circle', 'scroll-top'); ?>">
+                <span class="scroll-top-demo scroll-top-demo-circle"><svg width="36px" height="36px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <style>
+                                .top-icon {
+                                    fill: none;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: bevel;
+                                    stroke-width: 1.5px;
+                                    stroke: #fff;
+                                }
+                            </style>
+                        </defs>
+                        <g id="ic-chevron-top">
+                            <path class="top-icon" d="M16.78,14.2l-4.11-4.11a1,1,0,0,0-1.41,0l-4,4" />
+                        </g>
+                    </svg>
+                </span>
                 <span class="screen-reader-text"><?php esc_html_e('Circle', 'scroll-top'); ?></span>
             </label>
         </p>
@@ -391,7 +439,7 @@ function scroll_top_plugin_settings_render_page() { ?>
 
     <div class="wrap">
 
-        <h2><?php esc_html_e('ID Back To Top Settings', 'scroll-top'); ?></h2>
+        <h2><?php esc_html_e('Scroll To Top Settings', 'scroll-top'); ?></h2>
 
         <div id="poststuff">
 
@@ -406,10 +454,19 @@ function scroll_top_plugin_settings_render_page() { ?>
                 </div><!-- .post-body-content -->
 
                 <div id="postbox-container-1" class="postbox-container">
-                    <div>
+                    <div class="postbox">
+                        <h3>Support The Project</h3>
+                        <div class="inside">
+                            <p>If you want to support this plugin, please consider donating to help keep it going. I truly appreciate any contribution.</p>
+                            <a href="https://paypal.me/satrya" target="_blank" class="button-primary">Donate Now</a>
+                        </div>
+                    </div>
 
-                        <a href="https://www.dreamhost.com/r.cgi?2455711"><img src="<?php echo ST_ASSETS . 'img/banner_1.jpg'; ?>"></a>
-
+                    <div class="postbox">
+                        <div class="inside">
+                            <p>WP Rocket is the most powerful web performance plugin in the world. It will instantly reduce your load time and boost your Google PageSpeed and Core Web Vitals scores. No coding skills needed.</p>
+                            <a href="https://shareasale.com/r.cfm?b=1075949&u=2760296&m=74778&urllink=&afftrack=" target="_blank" rel="noreferrer noopener"><img src="<?php echo ST_ASSETS . 'img/wp-rocket.png'; ?>"></a>
+                        </div>
                     </div>
                 </div><!-- .postbox-container -->
 

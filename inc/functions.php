@@ -76,7 +76,7 @@ function scroll_top_scrollup_init() {
     if ($type === 'text') {
         $scroll_type = $text;
     } else {
-        $scroll_type = '<span class="scroll-top"><i class="icon-up-open"></i></span>';
+        $scroll_type = '<span class="scroll-top"><svg width="36px" height="36px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><style>.top-icon{fill:none;stroke-linecap:round;stroke-linejoin:bevel;stroke-width:1.5px;}</style></defs><g id="ic-chevron-top"><path class="top-icon" d="M16.78,14.2l-4.11-4.11a1,1,0,0,0-1.41,0l-4,4"/></g></svg></span>';
     }
 
     // Scroll target
@@ -136,18 +136,17 @@ function scroll_top_custom_css() {
 
     // Scroll top font-size.
     $scroll_fontsize = '';
-    if ($type === 'icon') {
-        $scroll_fontsize = '25px';
-    } else {
-        $scroll_fontsize = '15px';
+    if ($type === 'text') {
+        $scroll_fontsize = 'font-size: 15px';
     }
 
     if ($enable) {
 
-        echo '<!-- Scroll Top -->' . "\n";
+        echo '<!-- Scroll To Top -->' . "\n";
         echo '<style id="scrolltop-custom-style">
-		#scrollUp {border-radius:' . $scroll_radius . ';-webkit-border-radius:' . $scroll_radius . ';-moz-border-radius:' . $scroll_radius . ';font-size:' . $scroll_fontsize . ';opacity:0.7;filter:alpha(opacity=70);bottom:20px;' . $scroll_position . 'color:' . $color . ';background:' . $bgcolor . ';}
-		#scrollUp:hover{opacity:1;filter:alpha(opacity=100);}
+		#scrollUp {border-radius:' . $scroll_radius . ';opacity:0.7;bottom:20px;' . $scroll_position . 'background:' . $bgcolor . ';' . $scroll_fontsize . ';}
+		#scrollUp:hover{opacity:1;}
+        .top-icon{stroke:' . $color . ';}
 		' . $css . '
 		</style>' . "\n";
         echo '<!-- End Scroll Top - https://wordpress.org/plugins/scroll-top/ -->' . "\n";

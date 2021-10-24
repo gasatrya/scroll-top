@@ -1,11 +1,11 @@
-=== ID Back To Top ===
+=== Scroll To Top ===
 Contributors: idenovasi, satrya
 Donate link: https://paypal.me/satrya
 Tags: back to top, button, to top, jquery, scroll to top, scroll top, customization
-Requires at least: 4.8
-Tested up to: 5.6
+Requires at least: 5.6
+Tested up to: 5.8
 Requires PHP: 7.2
-Stable tag: 1.1.1
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,8 +20,8 @@ This plugin will automaticlly enable a custom and flexible [Back to Top](https:/
 * No setup needed.
 * **Custom target.**
 * Unlimited colors.
-* Retina support(icon font).
-* Choose text or icon font.
+* **SVG Icon**.
+* Choose text or icon.
 * Customizable text.
 * Position switcher (left or right).
 * Change animation you like.
@@ -30,7 +30,7 @@ This plugin will automaticlly enable a custom and flexible [Back to Top](https:/
 = Support this project =
 
 * [Translate to your language](https://translate.wordpress.org/projects/wp-plugins/scroll-top/).
-* Contribute on [Github](https://github.com/satrya/scroll-top).
+* Contribute on [Github](https://github.com/idenovasi/scroll-top).
 * [Donate](https://paypal.me/satrya).
 
 == Installation ==
@@ -58,6 +58,7 @@ This plugin will automaticlly enable a custom and flexible [Back to Top](https:/
 
 == Changelog ==
 
-= 1.1.1 =
-* Maintenance update
+= 1.2.0 =
+* Change icon font with SVG icon, no more extra css and fonts to load!
+* Remove CSS for older browser
 

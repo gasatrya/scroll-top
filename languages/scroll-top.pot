@@ -13,12 +13,12 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: admin/admin.php:15, admin/admin.php:394
-msgid "ID Back To Top Settings"
+#: admin/admin.php:15, admin/admin.php:442
+msgid "Scroll To Top Settings"
 msgstr ""
 
 #: admin/admin.php:16
-msgid "Back To Top"
+msgid "Scroll To Top"
 msgstr ""
 
 #: admin/admin.php:77, admin/admin.php:192
@@ -49,7 +49,7 @@ msgstr ""
 msgid "Style"
 msgstr ""
 
-#: admin/admin.php:140, admin/admin.php:323
+#: admin/admin.php:140, admin/admin.php:371
 msgid "Animation"
 msgstr ""
 
@@ -89,43 +89,43 @@ msgstr ""
 msgid "Radius"
 msgstr ""
 
-#: admin/admin.php:296, admin/admin.php:297
+#: admin/admin.php:313
 msgid "Rounded"
 msgstr ""
 
-#: admin/admin.php:302, admin/admin.php:303
+#: admin/admin.php:335
 msgid "Square"
 msgstr ""
 
-#: admin/admin.php:308, admin/admin.php:309
+#: admin/admin.php:357
 msgid "Circle"
 msgstr ""
 
-#: admin/admin.php:327
+#: admin/admin.php:375
 msgid "Fade"
 msgstr ""
 
-#: admin/admin.php:332
+#: admin/admin.php:380
 msgid "Slide"
 msgstr ""
 
-#: admin/admin.php:337
+#: admin/admin.php:385
 msgid "None"
 msgstr ""
 
-#: admin/admin.php:351
+#: admin/admin.php:399
 msgid " millisecond"
 msgstr ""
 
-#: admin/admin.php:362
+#: admin/admin.php:410
 msgid " px"
 msgstr ""
 
-#: admin/admin.php:373
+#: admin/admin.php:421
 msgid " example: #page"
 msgstr ""
 
-#: admin/admin.php:404
+#: admin/admin.php:452
 msgid "Save Settings"
 msgstr ""
 
