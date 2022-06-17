@@ -10,18 +10,19 @@
 function scroll_top_get_default_settings() {
 
     $default_settings = array(
-        'scroll_top_enable'     => 1,
-        'scroll_top_type'       => 'icon',
-        'scroll_top_text'       => esc_html__('Back to Top', 'scroll-top'),
-        'scroll_top_position'   => 'right',
-        'scroll_top_color'      => '#ffffff',
-        'scroll_top_bg_color'   => '#000000',
-        'scroll_top_radius'     => 'rounded',
-        'scroll_top_animation'  => 'fade',
-        'scroll_top_speed'      => 300,
-        'scroll_top_distance'   => 300,
-        'scroll_top_target'     => '',
-        'scroll_top_css'        => ''
+        'scroll_top_enable'        => 1,
+        'scroll_top_mobile_enable' => 1,
+        'scroll_top_type'          => 'icon',
+        'scroll_top_text'          => esc_html__('Back to Top', 'scroll-top'),
+        'scroll_top_position'      => 'right',
+        'scroll_top_color'         => '#ffffff',
+        'scroll_top_bg_color'      => '#000000',
+        'scroll_top_radius'        => 'rounded',
+        'scroll_top_animation'     => 'fade',
+        'scroll_top_speed'         => 300,
+        'scroll_top_distance'      => 300,
+        'scroll_top_target'        => '',
+        'scroll_top_css'           => ''
     );
 
     // Allow dev to filter the default settings.
@@ -111,6 +112,7 @@ function scroll_top_custom_css() {
 
     // Get the plugin settings value
     $enable   = scroll_top_get_plugin_settings('scroll_top_enable');
+    $mobile   = scroll_top_get_plugin_settings('scroll_top_mobile_enable');
     $color    = scroll_top_get_plugin_settings('scroll_top_color');
     $bgcolor  = scroll_top_get_plugin_settings('scroll_top_bg_color');
     $radius   = scroll_top_get_plugin_settings('scroll_top_radius');
@@ -140,6 +142,12 @@ function scroll_top_custom_css() {
         $scroll_fontsize = 'font-size: 15px';
     }
 
+    // Enable on mobile
+    $scroll_mobile = '';
+    if ($mobile === 1) {
+        $scroll_mobile = '@media (max-width: 567px) { #scrollUp { display: block !important; } };';
+    }
+
     if ($enable) {
 
         echo '<!-- Scroll To Top -->' . "\n";
@@ -147,6 +155,7 @@ function scroll_top_custom_css() {
 		#scrollUp {border-radius:' . $scroll_radius . ';opacity:0.7;bottom:20px;' . $scroll_position . 'background:' . $bgcolor . ';' . $scroll_fontsize . ';}
 		#scrollUp:hover{opacity:1;}
         .top-icon{stroke:' . $color . ';}
+        ' . $scroll_mobile . '
 		' . $css . '
 		</style>' . "\n";
         echo '<!-- End Scroll Top - https://wordpress.org/plugins/scroll-top/ -->' . "\n";

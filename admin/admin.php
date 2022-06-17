@@ -80,6 +80,15 @@ function scroll_top_setting_sections_fields() {
         'scroll_top_general_settings'
     );
 
+    // Add enable/disable on mobile checkbox setting field.
+    add_settings_field(
+        'scroll_top_mobile_enable',
+        esc_html__('Mobile', 'scroll-top'),
+        'scroll_top_mobile_enable_field',
+        'scroll_top_settings_page',
+        'scroll_top_general_settings'
+    );
+
     // Add 'type' selectbox setting field.
     add_settings_field(
         'scroll_top_type',
@@ -194,6 +203,26 @@ function scroll_top_enable_field() {
             <label for="enable_scroll_top">
                 <input id="enable_scroll_top" type="checkbox" name="scroll_top_plugin_settings[scroll_top_enable]" value="1" <?php checked(1, $settings); ?> />
                 <?php esc_html_e('Enable Back To Top?', 'scroll-top'); ?>
+            </label>
+        </p>
+    </fieldset>
+
+<?php
+}
+
+/**
+ * Enable/disable on mobile field
+ */
+function scroll_top_mobile_enable_field() {
+    $settings = scroll_top_get_plugin_settings('scroll_top_mobile_enable');
+?>
+
+    <fieldset>
+        <legend class="screen-reader-text"><span><?php esc_html_e('Mobile', 'scroll-top'); ?></span></legend>
+        <p>
+            <label for="scroll_top_mobile_enable">
+                <input id="scroll_top_mobile_enable" type="checkbox" name="scroll_top_plugin_settings[scroll_top_mobile_enable]" value="1" <?php checked(1, $settings); ?> />
+                <?php esc_html_e('Enable on mobile?', 'scroll-top'); ?>
             </label>
         </p>
     </fieldset>
@@ -505,6 +534,7 @@ function scroll_top_plugin_settings_validate($settings) {
         $settings['scroll_top_animation'] = 'fade';
 
     $settings['scroll_top_enable']   = (isset($settings['scroll_top_enable']) && 1 == $settings['scroll_top_enable'] ? 1 : 0);
+    $settings['scroll_top_mobile_enable']   = (isset($settings['scroll_top_mobile_enable']) && 1 == $settings['scroll_top_mobile_enable'] ? 1 : 0);
     $settings['scroll_top_text']     = sanitize_text_field($settings['scroll_top_text']);
     $settings['scroll_top_color']    = sanitize_hex_color($settings['scroll_top_color']);
     $settings['scroll_top_bg_color'] = sanitize_hex_color($settings['scroll_top_bg_color']);

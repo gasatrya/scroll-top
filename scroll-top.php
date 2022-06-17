@@ -4,11 +4,11 @@
  * Plugin Name:       Scroll To Top
  * Plugin URI:        https://idenovasi.com/projects/scroll-top/
  * Description:       Adds a flexible Back to Top button to any post/page of your WordPress website.
- * Version:           1.2.0
+ * Version:           1.3.0
  * Requires at least: 5.6
  * Requires PHP:      7.2
- * Author:            Idenovasi
- * Author URI:        https://idenovasi.com/
+ * Author:            Satrya
+ * Author URI:        https://twitter.com/gasatrya/
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       scroll-top
