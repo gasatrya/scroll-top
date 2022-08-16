@@ -1,20 +1,17 @@
 {
   "name": "scroll-top",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "A simple back to top plugin",
-  "main": "gulpfile.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gasatrya/scroll-top.git"
   },
   "keywords": [
     "wordpress",
-    "plugin"
+    "plugin",
+    "scroll top"
   ],
-  "author": "Satrya (satrya@idenovasi.com)",
+  "author": "Satrya (gasatrya.dev@gmail.com)",
   "license": "GPL-2.0-or-later",
   "bugs": {
     "url": "https://github.com/gasatrya/scroll-top/issues"

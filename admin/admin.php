@@ -261,7 +261,7 @@ function scroll_top_type_field() {
 function scroll_top_text_field() {
     $settings = scroll_top_get_plugin_settings('scroll_top_text');
 ?>
-    <input class="regular-text" id="scroll-top-text" type="text" name="scroll_top_plugin_settings[scroll_top_text]" value="<?php echo sanitize_text_field($settings); ?>" />
+    <input class="regular-text" id="scroll-top-text" type="text" name="scroll_top_plugin_settings[scroll_top_text]" value="<?php echo esc_attr($settings); ?>" />
 
 <?php
 }
@@ -488,13 +488,6 @@ function scroll_top_plugin_settings_render_page() { ?>
                         <div class="inside">
                             <p>If you want to support this plugin, please consider donating to help keep it going. I truly appreciate any contribution.</p>
                             <a href="https://paypal.me/satrya" target="_blank" class="button-primary">Donate Now</a>
-                        </div>
-                    </div>
-
-                    <div class="postbox">
-                        <div class="inside">
-                            <p>WP Rocket is the most powerful web performance plugin in the world. It will instantly reduce your load time and boost your Google PageSpeed and Core Web Vitals scores. No coding skills needed.</p>
-                            <a href="https://shareasale.com/r.cfm?b=1075949&u=2760296&m=74778&urllink=&afftrack=" target="_blank" rel="noreferrer noopener"><img src="<?php echo ST_ASSETS . 'img/wp-rocket.png'; ?>"></a>
                         </div>
                     </div>
                 </div><!-- .postbox-container -->
