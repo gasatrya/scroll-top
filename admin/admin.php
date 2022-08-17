@@ -297,7 +297,7 @@ function scroll_top_position_field() {
 function scroll_top_color_field() {
     $settings = scroll_top_get_plugin_settings('scroll_top_color');
 ?>
-    <input class="color-scroll" type="text" name="scroll_top_plugin_settings[scroll_top_color]" value="<?php echo sanitize_hex_color($settings); ?>" data-default-color="#ffffff" />
+    <input class="color-scroll" type="text" name="scroll_top_plugin_settings[scroll_top_color]" value="<?php echo esc_attr($settings); ?>" data-default-color="#ffffff" />
 <?php
 }
 
@@ -307,7 +307,7 @@ function scroll_top_color_field() {
 function scroll_top_bg_color_field() {
     $settings = scroll_top_get_plugin_settings('scroll_top_bg_color');
 ?>
-    <input class="color-scroll" type="text" name="scroll_top_plugin_settings[scroll_top_bg_color]" value="<?php echo sanitize_hex_color($settings); ?>" data-default-color="#000000" />
+    <input class="color-scroll" type="text" name="scroll_top_plugin_settings[scroll_top_bg_color]" value="<?php echo esc_attr($settings); ?>" data-default-color="#000000" />
 <?php
 }
 
@@ -424,7 +424,7 @@ function scroll_top_animation_field() {
 function scroll_top_speed_field() {
     $settings = scroll_top_get_plugin_settings('scroll_top_speed');
 ?>
-    <input name="scroll_top_plugin_settings[scroll_top_speed]" type="number" step="50" min="50" id="scroll_top_speed" value="<?php echo (int)$settings; ?>" class="small-text" />
+    <input name="scroll_top_plugin_settings[scroll_top_speed]" type="number" step="50" min="50" id="scroll_top_speed" value="<?php echo (int) $settings; ?>" class="small-text" />
     <?php esc_html_e(' millisecond', 'scroll-top'); ?>
 <?php
 }
@@ -435,7 +435,7 @@ function scroll_top_speed_field() {
 function scroll_top_distance_field() {
     $settings = scroll_top_get_plugin_settings('scroll_top_distance');
 ?>
-    <input name="scroll_top_plugin_settings[scroll_top_distance]" type="number" step="100" min="100" id="scroll_top_distance" value="<?php echo (int)$settings; ?>" class="small-text" />
+    <input name="scroll_top_plugin_settings[scroll_top_distance]" type="number" step="100" min="100" id="scroll_top_distance" value="<?php echo (int) $settings; ?>" class="small-text" />
     <?php esc_html_e(' px', 'scroll-top'); ?>
 <?php
 }
@@ -457,7 +457,7 @@ function scroll_top_target_field() {
 function scroll_top_css_field() {
     $settings = scroll_top_get_plugin_settings('scroll_top_css');
 ?>
-    <textarea name="scroll_top_plugin_settings[scroll_top_css]" id="scroll_top_css" cols="50" rows="12"><?php echo $settings; ?></textarea>
+    <textarea name="scroll_top_plugin_settings[scroll_top_css]" id="scroll_top_css" cols="50" rows="12"><?php echo esc_attr($settings); ?></textarea>
 <?php
 }
 
@@ -487,7 +487,7 @@ function scroll_top_plugin_settings_render_page() { ?>
                         <h3>Support The Project</h3>
                         <div class="inside">
                             <p>If you want to support this plugin, please consider donating to help keep it going. I truly appreciate any contribution.</p>
-                            <a href="https://paypal.me/satrya" target="_blank" class="button-primary">Donate Now</a>
+                            <a href="https://paypal.me/satrya" target="_blank" class="button-primary">Buy me a Coffee</a>
                         </div>
                     </div>
                 </div><!-- .postbox-container -->
@@ -533,8 +533,8 @@ function scroll_top_plugin_settings_validate($settings) {
     $settings['scroll_top_bg_color'] = sanitize_hex_color($settings['scroll_top_bg_color']);
     $settings['scroll_top_speed']    = absint($settings['scroll_top_speed']);
     $settings['scroll_top_distance'] = absint($settings['scroll_top_distance']);
-    $settings['scroll_top_target']   = esc_html($settings['scroll_top_target']);
-    $settings['scroll_top_css ']     = wp_filter_nohtml_kses($settings['scroll_top_css ']);
+    $settings['scroll_top_target']   = sanitize_text_field($settings['scroll_top_target']);
+    $settings['scroll_top_css']      = sanitize_text_field($settings['scroll_top_css']);
 
     return $settings;
 }

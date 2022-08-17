@@ -65,17 +65,17 @@ function scroll_top_scrollup_init() {
 
     // Get the plugin settings value
     $enable  = scroll_top_get_plugin_settings('scroll_top_enable');
-    $speed   = absint(scroll_top_get_plugin_settings('scroll_top_speed'));
-    $dist    = absint(scroll_top_get_plugin_settings('scroll_top_distance'));
-    $target  = esc_attr(scroll_top_get_plugin_settings('scroll_top_target'));
-    $animate = esc_attr(scroll_top_get_plugin_settings('scroll_top_animation'));
-    $type    = esc_attr(scroll_top_get_plugin_settings('scroll_top_type'));
-    $text    = sanitize_text_field(scroll_top_get_plugin_settings('scroll_top_text'));
+    $speed   = scroll_top_get_plugin_settings('scroll_top_speed');
+    $dist    = scroll_top_get_plugin_settings('scroll_top_distance');
+    $target  = scroll_top_get_plugin_settings('scroll_top_target');
+    $animate = scroll_top_get_plugin_settings('scroll_top_animation');
+    $type    = scroll_top_get_plugin_settings('scroll_top_type');
+    $text    = scroll_top_get_plugin_settings('scroll_top_text');
 
     // Scroll top type
     $scroll_type = '';
     if ($type === 'text') {
-        $scroll_type = $text;
+        $scroll_type = esc_attr($text);
     } else {
         $scroll_type = '<span class="scroll-top"><svg width="36px" height="36px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><style>.top-icon{fill:none;stroke-linecap:round;stroke-linejoin:bevel;stroke-width:1.5px;}</style></defs><g id="ic-chevron-top"><path class="top-icon" d="M16.78,14.2l-4.11-4.11a1,1,0,0,0-1.41,0l-4,4"/></g></svg></span>';
     }
@@ -83,20 +83,19 @@ function scroll_top_scrollup_init() {
     // Scroll target
     $scroll_target = '';
     if (!empty($target)) {
-        $scroll_target = $target;
+        $scroll_target = esc_attr($target);
     }
 
     // Loads the scroll top
     if ($enable) {
-
         echo '
 		<script id="scrolltop-custom-js">
 		jQuery(document).ready(function($){
 			$.scrollUp({
-				scrollSpeed: ' . $speed . ',
-				animation: \'' . $animate . '\',
+				scrollSpeed: ' . (int) $speed . ',
+				animation: \'' . esc_attr($animate) . '\',
 				scrollText: \'' . $scroll_type . '\',
-				scrollDistance: ' . $dist . ',
+				scrollDistance: ' . (int) $dist . ',
 				scrollTarget: \'' . $scroll_target . '\'
 			});
 		});
@@ -149,14 +148,13 @@ function scroll_top_custom_css() {
     }
 
     if ($enable) {
-
         echo '<!-- Scroll To Top -->' . "\n";
         echo '<style id="scrolltop-custom-style">
-		#scrollUp {border-radius:' . $scroll_radius . ';opacity:0.7;bottom:20px;' . $scroll_position . 'background:' . $bgcolor . ';' . $scroll_fontsize . ';}
+		#scrollUp {border-radius:' . $scroll_radius . ';opacity:0.7;bottom:20px;' . $scroll_position . 'background:' . esc_attr($bgcolor) . ';' . $scroll_fontsize . ';}
 		#scrollUp:hover{opacity:1;}
-        .top-icon{stroke:' . $color . ';}
+        .top-icon{stroke:' . esc_attr($color) . ';}
         ' . $scroll_mobile . '
-		' . $css . '
+		' . esc_attr($css) . '
 		</style>' . "\n";
         echo '<!-- End Scroll Top - https://wordpress.org/plugins/scroll-top/ -->' . "\n";
     }

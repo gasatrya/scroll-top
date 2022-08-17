@@ -5,7 +5,7 @@ Tags: back to top, button, to top, jquery, scroll to top, scroll top, customizat
 Requires at least: 5.6
 Tested up to: 6.0
 Requires PHP: 7.2
-Stable tag: 1.4.0
+Stable tag: 1.4.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -58,6 +58,8 @@ This plugin will automaticlly enable a custom and flexible **Back to Top** butto
 
 == Changelog ==
 
-= 1.4.0 =
+= 1.4.1 =
 * Fixed: important security issue. Thanks to WPScan
+* Fixed: properly sanitize & escape user input.
+* Fixed: cross browser issue.
 
