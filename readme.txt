@@ -67,8 +67,6 @@ This plugin will automaticlly enable a custom and flexible **Back to Top** butto
 - **Fixed:** Disable on mobile issue fix.
 - **Fixed:** Text type bug.
 
-===
-
 = 1.4.1 =
 *Release date: Sept 31, 2022*
 

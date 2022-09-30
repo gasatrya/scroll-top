@@ -16,8 +16,10 @@ function copyFiles() {
     "!*.map",
     "!node_modules/**",
     "!dist/**",
+    "!vendor/**",
     "!sass/**",
     "!.git/**",
+    "!.vscode/**",
     "!.github/**",
     "!gulpfile.js",
     "!package.json",
@@ -27,6 +29,9 @@ function copyFiles() {
     "!.jshintrc",
     "!.DS_Store",
     "!*.map",
+    "!composer.json",
+    "!composer.lock",
+    "!README.md",
   ]).pipe(dest("dist/scroll-top/"));
 }
 
