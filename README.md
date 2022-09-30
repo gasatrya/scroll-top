@@ -5,6 +5,7 @@ A free WordPress plugin to automaticlly adds a flexible **Back to Top** button t
 ### Features Include:
 
 * No setup needed.
+* Async JavaScript.
 * **Custom target.**
 * Unlimited colors.
 * **SVG Icon**.
@@ -17,5 +18,5 @@ A free WordPress plugin to automaticlly adds a flexible **Back to Top** button t
 
 ### Important Links
 
-* [Buy me a cofee](https://paypal.me/satrya).
+* [Support & donate](https://paypal.me/satrya).
 * Plugin by [Ga Satrya](https://gasatrya.dev/).
