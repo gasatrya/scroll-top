@@ -5,7 +5,7 @@ Tags: back to top, button, to top, jquery, scroll to top, scroll top, customizat
 Requires at least: 5.6
 Tested up to: 6.0
 Requires PHP: 7.2
-Stable tag: 1.4.1
+Stable tag: 1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,19 +18,19 @@ This plugin will automaticlly enable a custom and flexible **Back to Top** butto
 = Features Include: =
 
 * No setup needed.
-* **Custom target.**
 * Unlimited colors.
+* Async JavaScript.
 * **SVG Icon**.
-* Disable on mobile. *new*
+* Custom target.
+* Disable on mobile.
 * Choose text or icon.
 * Customizable text.
 * Position switcher (left or right).
 * Change animation you like.
-* Custom CSS area.
 
 = Important Links =
 
-* [Buy me a cofee](https://paypal.me/satrya).
+* [Support & donate](https://paypal.me/satrya).
 * Plugin by [Ga Satrya](https://gasatrya.dev/).
 
 == Installation ==
@@ -58,7 +58,19 @@ This plugin will automaticlly enable a custom and flexible **Back to Top** butto
 
 == Changelog ==
 
+= 1.5 =
+*Release date: Sept 31, 2022*
+
+- **Enhancements:** Async JavaScript to improve performance.
+- **Enhancements:** Code refactor, follow latest WordPress coding standard.
+- **Fixed:** Disable on mobile issue fix.
+- **Fixed:** Text type bug.
+
+===
+
 = 1.4.1 =
+*Release date: Sept 31, 2022*
+
 * Fixed: important security issue. Thanks to WPScan
 * Fixed: properly sanitize & escape user input.
 * Fixed: cross browser issue.

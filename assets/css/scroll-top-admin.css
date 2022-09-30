@@ -2,11 +2,11 @@
   width: 100%;
 }
 
-.scroll-top-settings .form-table tr:nth-child(3) {
+.scroll-top-settings .form-table tr:nth-child(5) {
   display: none;
 }
 
-.scroll-top-settings .checkbox-img label input[type='radio'] {
+.scroll-top-settings .checkbox-img label input[type="radio"] {
   vertical-align: top;
   margin-top: 2px;
 }

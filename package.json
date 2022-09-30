@@ -1,6 +1,6 @@
 {
   "name": "scroll-top",
-  "version": "1.4.0",
+  "version": "1.5",
   "description": "A simple back to top plugin",
   "repository": {
     "type": "git",
@@ -11,8 +11,8 @@
     "plugin",
     "scroll top"
   ],
-  "author": "Satrya (gasatrya.dev@gmail.com)",
-  "license": "GPL-2.0-or-later",
+  "author": "Ga Satrya (gasatrya.dev@gmail.com)",
+  "license": "GPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/gasatrya/scroll-top/issues"
   },
