@@ -31,7 +31,8 @@ This plugin will automaticlly enable a custom and flexible **Back to Top** butto
 = Important Links =
 
 * [Support & donate](https://paypal.me/satrya).
-* Plugin by [Ga Satrya](https://gasatrya.dev/).
+* Translate to [your language](https://translate.wordpress.org/projects/wp-plugins/scroll-top/).
+* Contribute or submit issues on [Github](https://github.com/gasatrya/scroll-top).
 
 == Installation ==
 
